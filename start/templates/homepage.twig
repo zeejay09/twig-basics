@@ -1,15 +1,25 @@
 <div class="hero-unit">
-	<h1>{{ pageTitle }}</h1>
+	<h1>{{ pageData.title }}</h1>
 
-	<div class="sale-ends-at">
-		Sale Ends: {{ saleEndsAt|date( 'D M jS ga') }}
-	</div>
+	<p>
+		{{ pageData.summary }}
+	</p>
+
+	{% if pageData.hasSale %}
+		<div class="sale-ends-at">
+			Sale Ends: {{ saleEndsAt|date( 'D M jS ga') }}
+		</div>
+	{% endif %}
 </div>
 
 <div class="raw">
 	{% for product in products %}
 		<div class="span4">
-			<h2>{{ product|upper|reverse }}</h2>
+			<h2>{{ product.name }}</h2>
+
+			<div class="product-img">
+				<img src="../assets/images/{{ product.imagePath }}" alt="{{ product.name }}">
+			</div>
 
 			{#<div class="price">
 				{{ (random()/100)|number_format(1) }}
