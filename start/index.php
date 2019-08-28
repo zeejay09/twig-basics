@@ -41,6 +41,7 @@ switch ($uri) {
                 'Penguin Accessories',
                 'Super Cool Penguin',
             ),
+            'saleEndsAt' => new\DateTime('+1 month'),
         ));
 
         break;
