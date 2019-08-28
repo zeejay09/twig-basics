@@ -50,6 +50,14 @@ switch ($uri) {
 
         break;
 
+    case '/contact':
+        echo $twig->render('contact.twig', array(
+            'pageData' => array(
+                'title' => 'Find us in the south pole!',
+            )
+        ));
+        break;
+
     // All other pages
     default:
         // if we have anything else, render the URL + .twig (e.g. /about -> about.twig)
